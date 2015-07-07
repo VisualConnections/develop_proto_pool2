@@ -1,0 +1,104 @@
+<section data-ng-controller="CardsController">
+
+    <div class="results-wrap">
+
+        <div class="row search_query_wrap">
+            
+                <div class="frame">
+                    <div class="input-group">
+                        <div class="input-group-btn">
+                            <button data-ng-click="searchAll(''+ searchAllTerm +'')" class="btn btn-success search_submit"><span class="glyphicon glyphicon-search" alt="Search"></span></button>
+                        </div>
+                        <input type="text" class="form-control search-input" placeholder="Search" id="query" name="query" data-ng-model="searchAllTerm">
+                        <div class="search-reset">�</div>
+                    </div>
+                </div>
+       
+        </div>
+
+        <div class="search_results_wrap">
+
+            <div class="row">
+
+                <div class="col-sm-12">
+                    <div class="frame">
+
+
+                        <div id="SearchTypeDescription" data-ng-show="showSearchType">
+                            The current results are based on your search of '{{ searchTermAll }}'.
+                            Click <a class="action_link" data-ng-click="searchBasedOnPreferences()">here</a> to view search results based on your preferences.
+                        </div>
+
+                        <div id="search_results_grid" style="min-height:600px">
+
+
+                            
+
+                            <div class="col-md-4 col-sm-6 repeat-animation" ng-repeat="col in columns">
+
+                                <div class="card" ng-repeat="rec in col.collection">
+                                    <div class="h3 title"><a href="">{{rec.sourceName}}</a></div>
+                                    <div class="desc">
+                                        <div class="block_title">
+                                            <span>{{ rec.title }}</span>
+                                            <span class="add_icon_wrap" ng-hide="true == true">
+                                                <a class="inactive">ADD</a>
+                                            </span>
+                                        </div>
+                                        <div class="block_info">
+                                            <div class="info_desc">
+                                                {{rec.description}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="block_footer">
+                                        <a href="javascript:void(0);" class="icon_share" alt="Share" title="share"></a>
+                                        <div class="popover top" role="tooltip">
+                                            <div class="arrow"></div>
+                                            <div class="popover-content">
+                                                <div class="share_options">
+                                                    <ul>
+                                                        <li><a class="email" href="mailto:">Email Topic Card</a></li>
+                                                        <li><a href="javascript:void(0);" class="copy">Copy URL</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a href="/#!/cards/detail?sourceId={{rec.sourceId}}&recordId={{rec.id}}&searchTerm={{rec.searchTerm}}" class="pull-right view_details">View Details</a>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+
+                            <div class="load-more-notification" ng-hide="!showPreLoader">
+                                <img src="/modules/core/images/loader.gif">
+                            </div>
+
+                            <div class="btn-load-more" ng-hide="!showLoadMoreButton">
+                                <a data-ng-click="moveNext()">
+                                    Load More Results
+                                </a>
+                            </div>
+
+
+                        </div>
+
+
+                        
+
+                    </div>
+               </div>
+
+            </div>
+
+         </div>
+
+
+    </div>
+
+</section>
+
+
+

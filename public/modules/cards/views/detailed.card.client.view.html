@@ -1,0 +1,114 @@
+<section data-ng-controller="DetailedCardController">
+
+
+    <div class="results-wrap">
+        <div class="search_results_wrap">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="frame">
+                        <div class="row" style="min-height:600px">
+
+                            
+
+                            <div id="search_results_grid" class="card_view col-sm-12 animate-show" data-ng-hide="!showDetailedCardContainer">
+                                <article>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="h3 title">
+                                                {{sourceName}}
+                                                <a href="/#!/cards" class="back_link pull-right"><< Back</a>
+                                            </div>
+
+
+
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="desc">
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <div class="block_title">
+                                                            <span>{{detailedRecordData[0].value}}</span>
+
+                                                            <div class="col-sm-7" ng-hide="true == true">
+                                                                <div class="date_pickers">
+                                                                    <label for="from">From</label>
+                                                                    <input type="text" id="from" name="from" value="09/28/2014" readonly="true">
+                                                                    <label for="to">to</label>
+                                                                    <input type="text" id="to" name="to" value="09/28/2014" readonly="true">
+                                                                </div>
+                                                            </div>
+
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <div class="block_info">
+                                                            <div class="info_desc">
+                                                                <div class="sub">
+                                                                    <div class="phone-img" ng-hide="true == true">
+                                                                        <img src="/modules/core/images/nlm-black-2x.png">
+                                                                    </div>
+                                                                    <div class="info_description">
+
+
+                                                                        <div class="section" ng-repeat="field in detailedRecordData">
+                                                                            <p class="sub_title">{{field.name}}:</p>
+                                                                            <span id="field_value" ng-bind-html="field.value"></span>
+                                                                        </div>
+
+
+                                                                    </div>
+                                                                    <div class="desktop-img" ng-hide="true == true">
+                                                                        <img src="/modules/core/images/nlm-black-2x.png">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="block_footer">
+                                                <a href="javascript:void(0);" title="Share" class="icon_share" alt="share"></a>
+                                                <div class="popover top" role="tooltip">
+                                                    <div class="arrow"></div>
+                                                    <div class="popover-content">
+                                                        <div class="share_options">
+                                                            <ul>
+                                                                <li><a class="email" href="mailto:" id="email_url">Email Topic Card</a></li>
+                                                                <li><a href="javascript:void(0);" class="copy">Copy URL</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <a href="/#!/cards" class="back_link pull-right"><< Back</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+
+                            <div class="load-more-notification" ng-hide="!showPreLoader">
+                                <img src="/modules/core/images/loader.gif">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    
+
+    
+
+</section>

@@ -1,0 +1,107 @@
+<section data-ng-controller="PreferencesController">
+    <div class="register_page_wrap">
+        <div class="frame">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="register_wrap">
+                        <h3 class="register_head">Preferences</h3>
+                        <div class="form_wrap">
+                            <div class="inputs_wrap">
+                                <p class="sub_title" data-ng-hide="true == true">Select an e-mail and password</p>
+                                <div class="input-wrap" data-ng-hide="true == true">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="col-sm-6 no_padding">
+                                                <input type="text" placeholder="E-mail" value="" class="email_input" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="input-wrap" data-ng-hide="true == true">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="col-sm-6 password_wrap">
+                                                <input type="password" placeholder="Password" value="" class="password_input" />
+                                            </div>
+                                            <div class="col-sm-6 password_wrap">
+                                                <input type="password" placeholder="Re-enter Password" value="" class="repassword_input" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="input_wrap">
+                                    <p class="sub_title">Tap on the sources you wish to subscribe</p>
+                                    <ul class="sources_available">
+                                        <li ng-repeat="source in sources">
+                                            <span>{{source.name}}</span>
+                                            <span class="add_icon_wrap" alt="Add Source" title="Add Source">
+                                                <a data-ng-click="changeSources(''+ source.id +'',!(source.chosen))" data-ng-class="source.chosen ? 'active' : 'inactive'" title="Add Source">ADD</a>
+                                            </span>
+                                        </li>
+                                       
+                                    </ul>
+                                </div>
+                                <div class="input_wrap search_saved_wrap">
+                                    <p class="sub_title">Saved searches</p>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="col-sm-6">
+                                                <ul class="saved_search">
+                                                    <li>
+                                                        <span><input type="text" placeholder="What are your interests" class="search_tag" value="" data-ng-model="searchTermToAdd" /></span>
+                                                        <span class="save_icon_wrap" alt="Add search" Title="Add search">
+                                                            <a class="active" title="Add search" data-ng-click="addSearchTerm(''+ searchTermToAdd +'')">ADD</a>
+                                                        </span>
+                                                    </li>
+                                                </ul>
+
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="phrase_text_wrap">
+                                                    <div class="row">
+                                                        <div class="col-sm-12">
+                                                            <div class="table-wrap">
+                                                                <table class="search_tags_table">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th>Your Saved Search Terms</th>
+
+                                                                            <th></th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+
+                                                                        <tr ng-repeat="term in searchTerms">
+                                                                            <td class="items">{{term}}</td>
+
+                                                                            <td>
+                                                                                <span class="delete_icon_wrap" alt="Delete" Title="Delete">
+                                                                                    <a data-ng-click="deleteSearchTerm(''+ $index +'')" Title="Delete" class="active">delete</a>
+                                                                                </span>
+                                                                            </td>
+                                                                        </tr>
+                                                                       
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="btn-register">
+                                    <a data-ng-click="savePreferences()">Done</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</section>

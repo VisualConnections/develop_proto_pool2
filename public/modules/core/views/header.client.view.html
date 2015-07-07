@@ -1,0 +1,29 @@
+<div class="navbar navbar-inverse main_nav" role="navigation" data-ng-controller="HeaderController">
+    <div class="frame">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle ph_nav_button" data-ng-click="toggleCollapsibleMenu()">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand logo_container" href="/#!">
+                <span class="logo-wrap">
+                    <img src="/modules/core/images/fbopen-logo.png" alt="FB Open" />
+                </span>
+            </a>
+        </div>
+        <div class="collapse navbar-collapse top-nav" collapse="!isCollapsed">
+            <ul class="nav navbar-nav">
+                <li class="nav_home" alt="Home"><a href="/#!/cards">Home</a></li>
+                <li class="nav_preference" alt="Settings"><a href="/#!/preferences">Preferences</a></li>
+                <li class="nav_feedback" data-ng-hide="true == true"><a href="#">Feedback</a></li>
+                <li class="nav_welcome">
+                    <span class="welcome_user"><span>Welcome</span><a href="/#!/preferences" class="user_name">FBOpen User</a></span>
+                    <span class="sep">|</span>
+                    <a href="javascript:alert('login/logout functionality coming soon!')" class="logout">Log out</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

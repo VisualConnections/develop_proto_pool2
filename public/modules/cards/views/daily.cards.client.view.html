@@ -1,0 +1,39 @@
+<section data-ng-controller="CardsController">
+
+    <ng-include src="'/modules/cards/views/search.interface.html'"></ng-include>
+
+    
+
+    <div class="container" id="main">
+
+
+
+
+        <div class="row">
+
+
+            <div class="col-md-4 col-sm-6" ng-repeat="col in columns">
+
+                <div class="panel panel-default" ng-repeat="rec in col.collection">
+                    <div class="panel-heading"><h4>{{ rec.title }}</h4></div>
+                    <div class="panel-body">
+                        <div class="list-group">
+                            {{rec.description}}
+                        </div>
+
+                        <a href="#">View Details</a>   | <a href="#">Delete</a>
+
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+        </div><!--/row-->
+
+
+    </div><!--/main-->
+
+</section>
