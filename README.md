@@ -24,7 +24,8 @@ We are happy  to showcase our agile capabilities and process maturity for this p
 
 * We would have demostrated our User Experience and Technology experience if we would have allocated more days
 * Because of schedule restriction we executed only one sprint for the prototype
-##**4. Installation Instructions **
+
+##**4. Installation Instructions** 
 * Install mongoDB using the instructions specified here 
 	[Mongo DB ](http://docs.mongodb.org/manual/installation/)
 	* Install node.js using the instructions specified here [node.js](https://nodejs.org/download/)
